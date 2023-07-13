@@ -6,10 +6,9 @@ data = ((1, 0.7), (2, 1.0), (3, 1.2), (4, 2.2), (5, 2.3), (6, 3.0), (7, 3.2), (8
 x, y = zip(*data)
 plt.scatter(x, y, label='Data points')
 
-# 直線 y = (1/2)x を描画
-x_line = range(0, 12)
-y_line = [(1/2) * i for i in x_line]
-plt.plot(x_line, y_line, color='red', label='y=ax')
+# 描画範囲を指定
+plt.xlim(-0.6, 11.6)  # x軸の範囲を指定
+plt.ylim(-0.3, 5.8)  # y軸の範囲を指定
 
 # グラフの設定
 plt.xlabel('x')
@@ -21,11 +20,11 @@ ax = plt.gca()
 ax.set_axisbelow(True)
 ax.grid()
 
-plt.title('Regression with y=ax')
+plt.title('Data points')
 
 # ファイル出力
-plt.savefig('regression.pdf', format='pdf')
-plt.savefig('regression.png', format='png')
+plt.savefig('datapoints.pdf', format='pdf')
+plt.savefig('datapoints.png', format='png')
 
 # グラフを表示
 plt.show()
